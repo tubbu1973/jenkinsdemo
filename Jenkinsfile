@@ -1,11 +1,11 @@
 pipeline {
-    agent any 
+    agent any
 
     stages {
-        stage('Build') {
+        stage('Verify') {
             steps {
-                // Installs the npm dependencies for the project
-                bat 'npm install' 
+                // This command lists the files to verify they were checked out correctly
+                bat 'dir'
             }
         }
     }
