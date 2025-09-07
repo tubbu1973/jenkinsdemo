@@ -1,12 +1,13 @@
 pipeline {
     agent any
 
-    tools {
-        // Tells Jenkins to use the Docker tool
-        docker 'docker'
-    }
-
     stages {
+        stage('Check Docker Version') {
+            steps {
+                bat 'docker --version'
+            }
+        }
+
         stage('Verify') {
             steps {
                 bat 'dir'
